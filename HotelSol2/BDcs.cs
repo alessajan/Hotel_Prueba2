@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Collections;
+using System.Runtime.Remoting.Messaging;
 
 namespace HotelSol2
 {
@@ -45,10 +46,10 @@ namespace HotelSol2
         public bool GuardarCliente(Cliente mCliente)
         {
             string textocomando = "insert into Cliente (id_cliente, Nombre, Ap_paterno, Ap_materno, Edad, RFC) values (" +
-                mCliente.id_cliente + "," +
+                mCliente.id_Cliente + "," +
                 "\"" + mCliente.Nombre + "\"," +
-                "\"" + mCliente.Ap_paterno + "\"," +
-                "\"" + mCliente.Ap_materno + "\"," +
+                "\"" + mCliente.Ap_Paterno + "\"," +
+                "\"" + mCliente.Ap_Materno + "\"," +
                 mCliente.Edad + "," +
                 mCliente.RFC + ");";
 
@@ -64,11 +65,33 @@ namespace HotelSol2
             }
         }
 
+        public bool GuardarHabitacion(Habitacion mHabitacion)
+        {
+            string textcomando = "insert into habitacion (id_hab, Tipo, Numero, Precio, Estado) values (" +
+                mHabitacion.id_hab + "," +
+                "\"" + mHabitacion.Tipo + "\"," +
+                mHabitacion.Numero + "," +
+                mHabitacion.Precio + "," +
+                "\"" + mHabitacion.Estado + "\")";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+
+        }
+
         public ArrayList ConsultarUsuarios()
         {
             ArrayList listaUser = new ArrayList();
             MySqlDataReader Lector;
-            User mUser;
+            Usuario mUser;
 
             string textocomando = "select * from user limit 50";
             try
@@ -78,7 +101,7 @@ namespace HotelSol2
 
                 while (Lector.Read())
                 {
-                    mUser = new User
+                    mUser = new Usuario
                     {
                         id_User = Lector.GetInt32("id_user"),
                         Nombre = Lector.GetString("Nombre"),
@@ -97,7 +120,7 @@ namespace HotelSol2
             return listaUser;
         }
 
-        public bool Eliminar(User mUser)
+        public bool Eliminar(Usuario mUser)
         {
             string textocomando = "delete from user " + "where id_user = " + mUser.id_User;
 
@@ -113,7 +136,7 @@ namespace HotelSol2
             }
         }
 
-        public bool Modificar(User mUser)
+        public bool Modificar(Usuario mUser)
         {
             string textcomando = "update user " +
                 "set Nombre = \"" + mUser.Nombre + "\"," +
