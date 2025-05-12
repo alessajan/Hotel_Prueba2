@@ -13,6 +13,8 @@ namespace HotelSol2
     public partial class MenuPrincipal : Form
     {
         ReservaHabitacion mReservarHabitacion;
+        IngresarCliente mIngresarCliente = new IngresarCliente();
+        IngresarHabitacion mIngresarHabitacion = new IngresarHabitacion();
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -34,6 +36,16 @@ namespace HotelSol2
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BttnVRegistrarC_Click(object sender, EventArgs e)
+        {
+            mIngresarCliente.ShowDialog();
+        }
+
+        private void BttnVRegistrarH_Click(object sender, EventArgs e)
+        {
+            mIngresarHabitacion.ShowDialog();
         }
     }
 }

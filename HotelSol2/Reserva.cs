@@ -13,8 +13,8 @@ namespace HotelSol2
         public int id_hab { set; get; }
         public int id_cliente { set; get; }
         public string Tipo_pago { set; get; }
-        public string Fecha_ent { set; get; }
-        public string Fecha_sal { set; get; }
+        public DateTime Fecha_ent { set; get; }
+        public DateTime Fecha_sal { set; get; }
         public float Total_pago { set; get; }
 
     }

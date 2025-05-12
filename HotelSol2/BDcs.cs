@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
 using System.Collections;
-using System.Runtime.Remoting.Messaging;
+using MySql.Data.MySqlClient;
 
 namespace HotelSol2
 {
@@ -201,5 +196,25 @@ namespace HotelSol2
             }
         }
 
+        public bool GuardarFecha(Reserva mReserva)
+        {
+            string textcomando = "insert into reserva (id_user,id_hab,id_cliente,Tipo_pago,Fecha_ent,Fecha_sal,Total_pago) values (" +
+                mReserva.id_hab + "," +
+                mReserva.id_cliente + "," +
+                "\"" + mReserva.Tipo_pago + "\"" +
+                "\"" + mReserva.Fecha_ent.Year + "-" + mReserva.Fecha_ent.Month + "-" + mReserva.Fecha_ent.Day + "\"" +
+                "\"" + mReserva.Fecha_sal.Year + "-" + mReserva.Fecha_sal.Month + "-" + mReserva.Fecha_sal.Day + "\");";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

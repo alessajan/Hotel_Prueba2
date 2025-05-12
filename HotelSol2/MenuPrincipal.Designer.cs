@@ -36,6 +36,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnFactura = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BttnVRegistrarC = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.BttnVRegistrarH = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +53,7 @@
             // 
             // BttnVer1
             // 
-            this.BttnVer1.Location = new System.Drawing.Point(193, 207);
+            this.BttnVer1.Location = new System.Drawing.Point(193, 195);
             this.BttnVer1.Name = "BttnVer1";
             this.BttnVer1.Size = new System.Drawing.Size(75, 28);
             this.BttnVer1.TabIndex = 1;
@@ -106,18 +110,60 @@
             // 
             // btnFactura
             // 
-            this.btnFactura.Location = new System.Drawing.Point(193, 277);
+            this.btnFactura.Location = new System.Drawing.Point(193, 255);
             this.btnFactura.Name = "btnFactura";
             this.btnFactura.Size = new System.Drawing.Size(75, 23);
             this.btnFactura.TabIndex = 8;
             this.btnFactura.Text = "OK";
             this.btnFactura.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(50, 324);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 16);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Registar Cliente";
+            // 
+            // BttnVRegistrarC
+            // 
+            this.BttnVRegistrarC.Location = new System.Drawing.Point(193, 317);
+            this.BttnVRegistrarC.Name = "BttnVRegistrarC";
+            this.BttnVRegistrarC.Size = new System.Drawing.Size(75, 23);
+            this.BttnVRegistrarC.TabIndex = 10;
+            this.BttnVRegistrarC.Text = "Ver";
+            this.BttnVRegistrarC.UseVisualStyleBackColor = true;
+            this.BttnVRegistrarC.Click += new System.EventHandler(this.BttnVRegistrarC_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(53, 377);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 16);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Registrar Habitacion";
+            // 
+            // BttnVRegistrarH
+            // 
+            this.BttnVRegistrarH.Location = new System.Drawing.Point(193, 369);
+            this.BttnVRegistrarH.Name = "BttnVRegistrarH";
+            this.BttnVRegistrarH.Size = new System.Drawing.Size(75, 23);
+            this.BttnVRegistrarH.TabIndex = 12;
+            this.BttnVRegistrarH.Text = "Ver";
+            this.BttnVRegistrarH.UseVisualStyleBackColor = true;
+            this.BttnVRegistrarH.Click += new System.EventHandler(this.BttnVRegistrarH_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BttnVRegistrarH);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.BttnVRegistrarC);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -143,5 +189,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnFactura;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button BttnVRegistrarC;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button BttnVRegistrarH;
     }
 }

@@ -65,6 +65,18 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Habitacion.cs" />
+    <Compile Include="IngresarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarCliente.Designer.cs">
+      <DependentUpon>IngresarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IngresarHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngresarHabitacion.Designer.cs">
+      <DependentUpon>IngresarHabitacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +95,12 @@
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarCliente.resx">
+      <DependentUpon>IngresarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngresarHabitacion.resx">
+      <DependentUpon>IngresarHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
