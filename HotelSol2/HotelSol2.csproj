@@ -93,6 +93,9 @@
       <DependentUpon>ReservaHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

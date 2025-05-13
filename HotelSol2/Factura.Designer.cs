@@ -28,12 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
+            this.bttnGenerarFac = new System.Windows.Forms.Button();
+            this.DGVFactura = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVFactura)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(167, 389);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Generar Factura";
+            // 
+            // bttnGenerarFac
+            // 
+            this.bttnGenerarFac.Location = new System.Drawing.Point(397, 386);
+            this.bttnGenerarFac.Name = "bttnGenerarFac";
+            this.bttnGenerarFac.Size = new System.Drawing.Size(75, 23);
+            this.bttnGenerarFac.TabIndex = 1;
+            this.bttnGenerarFac.Text = "Generar";
+            this.bttnGenerarFac.UseVisualStyleBackColor = true;
+            // 
+            // DGVFactura
+            // 
+            this.DGVFactura.AllowUserToOrderColumns = true;
+            this.DGVFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVFactura.Location = new System.Drawing.Point(12, 12);
+            this.DGVFactura.Name = "DGVFactura";
+            this.DGVFactura.RowHeadersWidth = 51;
+            this.DGVFactura.RowTemplate.Height = 24;
+            this.DGVFactura.Size = new System.Drawing.Size(776, 336);
+            this.DGVFactura.TabIndex = 2;
+            // 
+            // Factura
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DGVFactura);
+            this.Controls.Add(this.bttnGenerarFac);
+            this.Controls.Add(this.label1);
+            this.Name = "Factura";
             this.Text = "Factura";
+            ((System.ComponentModel.ISupportInitialize)(this.DGVFactura)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button bttnGenerarFac;
+        private System.Windows.Forms.DataGridView DGVFactura;
     }
 }
