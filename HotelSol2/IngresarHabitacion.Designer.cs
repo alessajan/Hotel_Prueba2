@@ -57,7 +57,7 @@
             this.CBEstado.Items.AddRange(new object[] {
             "Libre",
             "Ocupada"});
-            this.CBEstado.Location = new System.Drawing.Point(159, 166);
+            this.CBEstado.Location = new System.Drawing.Point(189, 161);
             this.CBEstado.Name = "CBEstado";
             this.CBEstado.Size = new System.Drawing.Size(121, 24);
             this.CBEstado.TabIndex = 41;
@@ -73,7 +73,7 @@
             // 
             // TxtPrecio
             // 
-            this.TxtPrecio.Location = new System.Drawing.Point(159, 131);
+            this.TxtPrecio.Location = new System.Drawing.Point(189, 128);
             this.TxtPrecio.Name = "TxtPrecio";
             this.TxtPrecio.Size = new System.Drawing.Size(121, 22);
             this.TxtPrecio.TabIndex = 39;
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 137);
+            this.label3.Location = new System.Drawing.Point(27, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 16);
             this.label3.TabIndex = 38;
@@ -89,7 +89,7 @@
             // 
             // TxtNumHab
             // 
-            this.TxtNumHab.Location = new System.Drawing.Point(159, 97);
+            this.TxtNumHab.Location = new System.Drawing.Point(189, 91);
             this.TxtNumHab.Name = "TxtNumHab";
             this.TxtNumHab.Size = new System.Drawing.Size(121, 22);
             this.TxtNumHab.TabIndex = 37;
@@ -97,7 +97,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 103);
+            this.label2.Location = new System.Drawing.Point(27, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 16);
             this.label2.TabIndex = 36;
@@ -110,7 +110,7 @@
             "Sencilla",
             "Doble",
             "Suite"});
-            this.CBTipoHabit.Location = new System.Drawing.Point(159, 56);
+            this.CBTipoHabit.Location = new System.Drawing.Point(189, 51);
             this.CBTipoHabit.Name = "CBTipoHabit";
             this.CBTipoHabit.Size = new System.Drawing.Size(121, 24);
             this.CBTipoHabit.TabIndex = 35;
@@ -118,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 65);
+            this.label1.Location = new System.Drawing.Point(27, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(125, 16);
             this.label1.TabIndex = 34;
@@ -147,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(597, 246);
+            this.ClientSize = new System.Drawing.Size(540, 231);
             this.Controls.Add(this.BttnCancelar1);
             this.Controls.Add(this.BttnGuardarHabi);
             this.Controls.Add(this.label12);

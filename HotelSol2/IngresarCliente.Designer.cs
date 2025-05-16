@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.TxtTipoPago = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.TxtRFC = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -44,22 +42,6 @@
             this.BttnGuardarClien = new System.Windows.Forms.Button();
             this.BttnCancelar2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // TxtTipoPago
-            // 
-            this.TxtTipoPago.Location = new System.Drawing.Point(155, 248);
-            this.TxtTipoPago.Name = "TxtTipoPago";
-            this.TxtTipoPago.Size = new System.Drawing.Size(121, 22);
-            this.TxtTipoPago.TabIndex = 39;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(23, 254);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 16);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Tipo Pago:";
             // 
             // label11
             // 
@@ -177,8 +159,6 @@
             this.ClientSize = new System.Drawing.Size(599, 324);
             this.Controls.Add(this.BttnCancelar2);
             this.Controls.Add(this.BttnGuardarClien);
-            this.Controls.Add(this.TxtTipoPago);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.TxtRFC);
             this.Controls.Add(this.label8);
@@ -198,9 +178,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TxtTipoPago;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox TxtRFC;
         private System.Windows.Forms.Label label8;

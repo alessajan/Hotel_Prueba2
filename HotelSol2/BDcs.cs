@@ -38,15 +38,35 @@ namespace HotelSol2
             }
         }
 
+        public bool GuardarUsuario(Usuario mUsuario)
+        {
+            string textcomando = "insert into user (Nombre, Tipo, Contraseña, Ap_paterno, Ap_materno) values (" +
+                "\"" + mUsuario.Nombre + "\"," +
+                "\"" + mUsuario.Tipo + "\"," +
+                "\"" + mUsuario.Contraseña + "\"," +
+                "\"" + mUsuario.Ap_paterno + "\"," +
+                "\"" + mUsuario.Ap_materno + "\");";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         public bool GuardarCliente(Cliente mCliente)
         {
-            string textocomando = "insert into Cliente (id_cliente, Nombre, Ap_paterno, Ap_materno, Edad, RFC) values (" +
-                mCliente.id_Cliente + "," +
+            string textocomando = "insert into cliente (Nombre, Ap_paterno, Ap_materno, Edad, RFC) values (" +
                 "\"" + mCliente.Nombre + "\"," +
                 "\"" + mCliente.Ap_Paterno + "\"," +
                 "\"" + mCliente.Ap_Materno + "\"," +
                 mCliente.Edad + "," +
-                mCliente.RFC + ");";
+                "\"" + mCliente.RFC + "\");";
 
             try
             {
@@ -62,8 +82,7 @@ namespace HotelSol2
 
         public bool GuardarHabitacion(Habitacion mHabitacion)
         {
-            string textcomando = "insert into habitacion (id_hab, Tipo, Numero, Precio, Estado) values (" +
-                mHabitacion.id_hab + "," +
+            string textcomando = "insert into habitacion (Tipo, Numero, Precio, Estado) values (" +
                 "\"" + mHabitacion.Tipo + "\"," +
                 mHabitacion.Numero + "," +
                 mHabitacion.Precio + "," +

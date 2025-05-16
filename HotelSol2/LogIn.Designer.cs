@@ -1,6 +1,6 @@
 ﻿namespace HotelSol2
 {
-    partial class Form1
+    partial class LogIn
     {
         /// <summary>
         /// Variable del diseñador necesaria.

@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace HotelSol2
 {
-    public partial class Form1 : Form
+    public partial class LogIn : Form
     {
         MenuPrincipal mMenuPrincipal;
-        public Form1()
+        public LogIn()
         {
             InitializeComponent();
         }

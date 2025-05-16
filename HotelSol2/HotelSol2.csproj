@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.Designer.cs">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="BDcs.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Factura.cs">
@@ -58,11 +64,11 @@
     <Compile Include="Factura.Designer.cs">
       <DependentUpon>Factura.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Habitacion.cs" />
     <Compile Include="IngresarCliente.cs">
@@ -93,11 +99,20 @@
       <DependentUpon>ReservaHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="VerUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerUsuarios.Designer.cs">
+      <DependentUpon>VerUsuarios.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AgregarUsuario.resx">
+      <DependentUpon>AgregarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IngresarCliente.resx">
       <DependentUpon>IngresarCliente.cs</DependentUpon>
@@ -119,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="ReservaHabitacion.resx">
       <DependentUpon>ReservaHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerUsuarios.resx">
+      <DependentUpon>VerUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

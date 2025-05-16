@@ -15,6 +15,7 @@ namespace HotelSol2
         ReservaHabitacion mReservarHabitacion;
         IngresarCliente mIngresarCliente = new IngresarCliente();
         IngresarHabitacion mIngresarHabitacion = new IngresarHabitacion();
+        VerUsuarios mVerUsuarios = new VerUsuarios();
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -46,6 +47,11 @@ namespace HotelSol2
         private void BttnVRegistrarH_Click(object sender, EventArgs e)
         {
             mIngresarHabitacion.ShowDialog();
+        }
+
+        private void btnUsuarios2_Click(object sender, EventArgs e)
+        {
+            mVerUsuarios.ShowDialog();
         }
     }
 }
