@@ -305,27 +305,5 @@ namespace HotelSol2
                 return false;
             }
         }
-
-        public void ActualizarEstadoHabitacion(int id_hab, string nuevoEstado)
-        {
-            string textcomando = "UPDATE habitaciones SET Estado = @estado WHERE id_hab = @id";
-
-            try
-            {
-                Consulta = new MySqlCommand(textcomando, Conexion);
-                Consulta.Parameters.AddWithValue("@Estado", nuevoEstado);
-                Consulta.Parameters.AddWithValue("@id", id_hab);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar el estado de la habitación: " + ex.Message);
-            }
-            finally
-            {
-                if (Conexion.State == ConnectionState.Open)
-                    Conexion.Close();
-            }
-        }
     }
 }

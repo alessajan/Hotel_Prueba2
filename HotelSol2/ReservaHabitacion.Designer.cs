@@ -30,8 +30,6 @@
         {
             this.label10 = new System.Windows.Forms.Label();
             this.BttnRegistrar = new System.Windows.Forms.Button();
-            this.BttnCancelar = new System.Windows.Forms.Button();
-            this.BttnRegresar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.DTPIngreso = new System.Windows.Forms.DateTimePicker();
             this.DTPSalida = new System.Windows.Forms.DateTimePicker();
@@ -61,33 +59,14 @@
             // 
             // BttnRegistrar
             // 
-            this.BttnRegistrar.Location = new System.Drawing.Point(280, 532);
+            this.BttnRegistrar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BttnRegistrar.Location = new System.Drawing.Point(502, 521);
             this.BttnRegistrar.Name = "BttnRegistrar";
-            this.BttnRegistrar.Size = new System.Drawing.Size(84, 32);
+            this.BttnRegistrar.Size = new System.Drawing.Size(204, 50);
             this.BttnRegistrar.TabIndex = 20;
             this.BttnRegistrar.Text = "Registrar";
             this.BttnRegistrar.UseVisualStyleBackColor = true;
             this.BttnRegistrar.Click += new System.EventHandler(this.BttnRegistrar_Click);
-            // 
-            // BttnCancelar
-            // 
-            this.BttnCancelar.BackColor = System.Drawing.Color.Brown;
-            this.BttnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BttnCancelar.Location = new System.Drawing.Point(748, 532);
-            this.BttnCancelar.Name = "BttnCancelar";
-            this.BttnCancelar.Size = new System.Drawing.Size(84, 32);
-            this.BttnCancelar.TabIndex = 21;
-            this.BttnCancelar.Text = "Cancelar";
-            this.BttnCancelar.UseVisualStyleBackColor = false;
-            // 
-            // BttnRegresar
-            // 
-            this.BttnRegresar.Location = new System.Drawing.Point(518, 532);
-            this.BttnRegresar.Name = "BttnRegresar";
-            this.BttnRegresar.Size = new System.Drawing.Size(84, 32);
-            this.BttnRegresar.TabIndex = 22;
-            this.BttnRegresar.Text = "Regresar";
-            this.BttnRegresar.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
@@ -229,8 +208,6 @@
             this.Controls.Add(this.DTPSalida);
             this.Controls.Add(this.DTPIngreso);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.BttnRegresar);
-            this.Controls.Add(this.BttnCancelar);
             this.Controls.Add(this.BttnRegistrar);
             this.Controls.Add(this.label10);
             this.Name = "ReservaHabitacion";
@@ -246,8 +223,6 @@
         #endregion
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button BttnRegistrar;
-        private System.Windows.Forms.Button BttnCancelar;
-        private System.Windows.Forms.Button BttnRegresar;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker DTPIngreso;
         private System.Windows.Forms.DateTimePicker DTPSalida;

@@ -78,9 +78,6 @@ namespace HotelSol2
                 return;
             }
 
-
-
-
             int id_hab = Convert.ToInt32(DGVHabi.CurrentRow.Cells["id_hab"].Value);
             //int id_hab = ((Habitacion)listahabi[DGVHabi.CurrentRow.Index]).id_hab;
             int id_cliente = Convert.ToInt32(DVGCliente.CurrentRow.Cells["id_cliente"].Value);
@@ -100,7 +97,7 @@ namespace HotelSol2
             {
                 if (mBD.GuardarReserva(mReserva))
                 {
-                    mBD.ActualizarEstadoHabitacion(id_hab, "Ocupado");
+                   
 
                     MessageBox.Show("Reserva guardada con exito");
                     LeerHabi();

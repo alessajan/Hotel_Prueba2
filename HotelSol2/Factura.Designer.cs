@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(805, 451);
             this.Controls.Add(this.DGVFactura);
             this.Controls.Add(this.bttnGenerarFac);
             this.Controls.Add(this.label1);
