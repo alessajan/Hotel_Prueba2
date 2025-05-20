@@ -8,6 +8,7 @@ namespace HotelSol2
 {
     internal class Habitacion
     {
+        public int id_hab { set; get; }
         public string Tipo { set; get; }
         public int Numero { set; get; }
         public float Precio { set; get; }

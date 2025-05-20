@@ -8,6 +8,7 @@ namespace HotelSol2
 {
     internal class Cliente
     {
+        public int id_cliente { set; get; }
         public string Nombre { set; get; }
         public string Ap_Paterno { set; get; }
         public string Ap_Materno { set; get; }

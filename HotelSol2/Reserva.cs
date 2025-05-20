@@ -15,7 +15,7 @@ namespace HotelSol2
         public string Tipo_pago { set; get; }
         public DateTime Fecha_ent { set; get; }
         public DateTime Fecha_sal { set; get; }
-        public float Total_pago { set; get; }
+        public decimal Total_pago { set; get; }
 
     }
 }

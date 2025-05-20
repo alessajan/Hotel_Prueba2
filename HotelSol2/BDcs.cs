@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Data;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace HotelSol2
@@ -134,6 +136,71 @@ namespace HotelSol2
             return listaUser;
         }
 
+        public ArrayList ConsultarHabitacion()
+        {
+            ArrayList listahabi = new ArrayList();
+            MySqlDataReader Lector;
+            Habitacion mHabitacion;
+
+            string textcomando = "select * from habitacion limit 50";
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Lector = Consulta.ExecuteReader();
+
+                while (Lector.Read())
+                {
+                    mHabitacion = new Habitacion
+                    {
+                        id_hab = Lector.GetInt32("id_hab"),
+                        Tipo = Lector.GetString("Tipo"),
+                        Numero = Lector.GetInt32("Numero"),
+                        Precio = Lector.GetInt32("Precio"),
+                        Estado = Lector.GetString("Estado")
+
+                    };
+                    listahabi.Add(mHabitacion);
+                }
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+            return listahabi;
+        }
+
+        public ArrayList ConsultarCliente()
+        {
+            ArrayList listaCliente = new ArrayList();
+            MySqlDataReader Lector;
+            Cliente mCliente;
+
+            string textcomando = "select * from cliente limit 50";
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Lector = Consulta.ExecuteReader();
+
+                while (Lector.Read())
+                {
+                    mCliente = new Cliente
+                    {
+                        id_cliente = Lector.GetInt32("id_cliente"),
+                        Nombre = Lector.GetString("Nombre"),
+                        Ap_Paterno = Lector.GetString("Ap_paterno"),
+                        Ap_Materno = Lector.GetString("Ap_materno"),
+                        Edad = Lector.GetInt32("Edad"),
+                        RFC = Lector.GetString("RFC")
+                    };
+                    listaCliente.Add(mCliente);
+                }
+            }catch(Exception e)
+            {
+                return null;
+            }
+            return listaCliente;
+        }
+
         public bool Eliminar(Usuario mUser)
         {
             string textocomando = "delete from user " + "where id_user = " + mUser.id_User;
@@ -215,24 +282,49 @@ namespace HotelSol2
             }
         }
 
-        public bool GuardarFecha(Reserva mReserva)
+        public bool GuardarReserva(Reserva mReserva)
         {
-            string textcomando = "insert into reserva (id_user,id_hab,id_cliente,Tipo_pago,Fecha_ent,Fecha_sal,Total_pago) values (" +
-                mReserva.id_hab + "," +
-                mReserva.id_cliente + "," +
-                "\"" + mReserva.Tipo_pago + "\"" +
-                "\"" + mReserva.Fecha_ent.Year + "-" + mReserva.Fecha_ent.Month + "-" + mReserva.Fecha_ent.Day + "\"" +
-                "\"" + mReserva.Fecha_sal.Year + "-" + mReserva.Fecha_sal.Month + "-" + mReserva.Fecha_sal.Day + "\");";
+            string textcomando = "insert into reserva (id_user, id_hab, id_cliente, Tipo_pago, Fecha_ent, Fecha_sal, Total_pago) values (@id_user, @id_hab, @id_cliente, @Tipo_pago, @Fecha_ent, @Fecha_sal, @Total_pago)";
 
             try
             {
                 Consulta = new MySqlCommand(textcomando, Conexion);
-                Consulta.ExecuteNonQuery();
+                Consulta.Parameters.AddWithValue("@id_user", mReserva.id_user);
+                Consulta.Parameters.AddWithValue("@id_hab", mReserva.id_hab);
+                Consulta.Parameters.AddWithValue("@id_cliente", mReserva.id_cliente);
+                Consulta.Parameters.AddWithValue("@Tipo_pago", mReserva.Tipo_pago);
+                Consulta.Parameters.AddWithValue("@Fecha_ent", mReserva.Fecha_ent.Date);
+                Consulta.Parameters.AddWithValue("@Fecha_sal", mReserva.Fecha_sal.Date);
+                Consulta.Parameters.AddWithValue("@Total_pago", mReserva.Total_pago);
+
                 return true;
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return false;
+            }
+        }
+
+        public void ActualizarEstadoHabitacion(int idHab, string nuevoEstado)
+        {
+            string textcomando = "UPDATE habitaciones SET Estado = @estado WHERE id_hab = @id";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.Parameters.AddWithValue("@Estado", nuevoEstado);
+                Consulta.Parameters.AddWithValue("@id", idHab);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el estado de la habitación: " + ex.Message);
+            }
+            finally
+            {
+                if (Conexion.State == ConnectionState.Open)
+                    Conexion.Close();
             }
         }
     }
