@@ -119,6 +119,7 @@
             this.DGVHabi.Name = "DGVHabi";
             this.DGVHabi.RowHeadersWidth = 51;
             this.DGVHabi.RowTemplate.Height = 24;
+            this.DGVHabi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVHabi.Size = new System.Drawing.Size(525, 168);
             this.DGVHabi.TabIndex = 30;
             // 
@@ -149,6 +150,7 @@
             this.DVGCliente.Name = "DVGCliente";
             this.DVGCliente.RowHeadersWidth = 51;
             this.DVGCliente.RowTemplate.Height = 24;
+            this.DVGCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DVGCliente.Size = new System.Drawing.Size(525, 168);
             this.DVGCliente.TabIndex = 45;
             // 
@@ -185,6 +187,7 @@
             this.DGVUsers.Name = "DGVUsers";
             this.DGVUsers.RowHeadersWidth = 51;
             this.DGVUsers.RowTemplate.Height = 24;
+            this.DGVUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVUsers.Size = new System.Drawing.Size(525, 168);
             this.DGVUsers.TabIndex = 49;
             // 

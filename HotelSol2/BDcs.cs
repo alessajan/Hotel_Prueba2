@@ -284,7 +284,8 @@ namespace HotelSol2
 
         public bool GuardarReserva(Reserva mReserva)
         {
-            string textcomando = "insert into reserva (id_user, id_hab, id_cliente, Tipo_pago, Fecha_ent, Fecha_sal, Total_pago) values (@id_user, @id_hab, @id_cliente, @Tipo_pago, @Fecha_ent, @Fecha_sal, @Total_pago)";
+            string textcomando = "insert into reserva (id_user, id_hab, id_cliente, Tipo_pago, Fecha_ent, Fecha_sal, Total_pago) values " +
+                "(@id_user, @id_hab, @id_cliente, @Tipo_pago, @Fecha_ent, @Fecha_sal, @Total_pago)";
 
             try
             {
@@ -296,9 +297,8 @@ namespace HotelSol2
                 Consulta.Parameters.AddWithValue("@Fecha_ent", mReserva.Fecha_ent.Date);
                 Consulta.Parameters.AddWithValue("@Fecha_sal", mReserva.Fecha_sal.Date);
                 Consulta.Parameters.AddWithValue("@Total_pago", mReserva.Total_pago);
-
+                Consulta.ExecuteNonQuery();
                 return true;
-
             }
             catch (Exception e)
             {
@@ -306,7 +306,7 @@ namespace HotelSol2
             }
         }
 
-        public void ActualizarEstadoHabitacion(int idHab, string nuevoEstado)
+        public void ActualizarEstadoHabitacion(int id_hab, string nuevoEstado)
         {
             string textcomando = "UPDATE habitaciones SET Estado = @estado WHERE id_hab = @id";
 
@@ -314,7 +314,7 @@ namespace HotelSol2
             {
                 Consulta = new MySqlCommand(textcomando, Conexion);
                 Consulta.Parameters.AddWithValue("@Estado", nuevoEstado);
-                Consulta.Parameters.AddWithValue("@id", idHab);
+                Consulta.Parameters.AddWithValue("@id", id_hab);
 
             }
             catch (Exception ex)
