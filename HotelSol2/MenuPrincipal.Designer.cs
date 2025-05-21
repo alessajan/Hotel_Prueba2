@@ -104,7 +104,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 214);
+            this.label5.Location = new System.Drawing.Point(61, 210);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 7;
@@ -112,12 +112,13 @@
             // 
             // btnFactura
             // 
-            this.btnFactura.Location = new System.Drawing.Point(156, 207);
+            this.btnFactura.Location = new System.Drawing.Point(144, 203);
             this.btnFactura.Name = "btnFactura";
             this.btnFactura.Size = new System.Drawing.Size(75, 23);
             this.btnFactura.TabIndex = 8;
             this.btnFactura.Text = "OK";
             this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // label3
             // 

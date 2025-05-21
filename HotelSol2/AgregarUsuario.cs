@@ -24,10 +24,10 @@ namespace HotelSol2
         {
             Modo = 1;
             TxtNombre.Text = mUsuario.Nombre;
-            TxtAp_paterno.Text = mUsuario.Ap_paterno;
-            TxtAp_materno.Text = mUsuario.Ap_materno;
             TxtTipo.Text = mUsuario.Tipo;
             TxtContraseña.Text = mUsuario.Contraseña;
+            TxtAp_paterno.Text = mUsuario.Ap_paterno;
+            TxtAp_materno.Text = mUsuario.Ap_materno;
         }
         private void BttnAgregar_Click(object sender, EventArgs e)
         {

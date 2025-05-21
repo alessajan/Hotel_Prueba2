@@ -51,6 +51,7 @@
             this.bttnGenerarFac.TabIndex = 1;
             this.bttnGenerarFac.Text = "Generar";
             this.bttnGenerarFac.UseVisualStyleBackColor = true;
+            this.bttnGenerarFac.Click += new System.EventHandler(this.bttnGenerarFac_Click);
             // 
             // DGVFactura
             // 

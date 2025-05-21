@@ -200,6 +200,39 @@ namespace HotelSol2
             }
             return listaCliente;
         }
+        public ArrayList ConsultarReserva()
+        {
+            ArrayList ListaReserva = new ArrayList();
+            MySqlDataReader Lector;
+            Reserva mReserva;
+
+            string textcomando = "select * from reserva limit 50";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Lector = Consulta.ExecuteReader();
+
+                while (Lector.Read())
+                {
+                    mReserva = new Reserva
+                    {
+                        id_reserva = Lector.GetInt32("id_reserva"),
+                        id_user = Lector.GetInt32("id_user"),
+                        id_hab = Lector.GetInt32("id_hab"),
+                        id_cliente = Lector.GetInt32("id_cliente"),
+                        Tipo_pago = Lector.GetString("Tipo_pago"),
+                        Fecha_ent = Lector.GetDateTime("Fecha_ent"),
+                        Fecha_sal = Lector.GetDateTime("Fecha_sal")
+                    };
+                    ListaReserva.Add(mReserva);
+                }
+            }catch (Exception e)
+            {
+                return null;
+            }
+            return ListaReserva;
+        }
 
         public bool Eliminar(Usuario mUser)
         {
