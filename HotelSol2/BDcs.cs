@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Data;
+using System.Web;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -101,6 +102,30 @@ namespace HotelSol2
                 return false;
             }
 
+        }
+
+        public bool GuardarReserva(Reserva mReserva)
+        {
+            string textcomando = "insert into reserva (id_user, id_hab, id_cliente, Tipo_pago, Fecha_ent, Fecha_sal, Total_pago) values " +
+                "(@id_user, @id_hab, @id_cliente, @Tipo_pago, @Fecha_ent, @Fecha_sal, @Total_pago)";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.Parameters.AddWithValue("@id_user", mReserva.id_user);
+                Consulta.Parameters.AddWithValue("@id_hab", mReserva.id_hab);
+                Consulta.Parameters.AddWithValue("@id_cliente", mReserva.id_cliente);
+                Consulta.Parameters.AddWithValue("@Tipo_pago", mReserva.Tipo_pago);
+                Consulta.Parameters.AddWithValue("@Fecha_ent", mReserva.Fecha_ent.Date);
+                Consulta.Parameters.AddWithValue("@Fecha_sal", mReserva.Fecha_sal.Date);
+                Consulta.Parameters.AddWithValue("@Total_pago", mReserva.Total_pago);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         public ArrayList ConsultarUsuarios()
@@ -234,7 +259,7 @@ namespace HotelSol2
             return ListaReserva;
         }
 
-        public bool Eliminar(Usuario mUser)
+        public bool EliminarUser(Usuario mUser)
         {
             string textocomando = "delete from user " + "where id_user = " + mUser.id_User;
 
@@ -250,7 +275,52 @@ namespace HotelSol2
             }
         }
 
-        public bool Modificar(Usuario mUser)
+        public bool EliminarCliente(Cliente mCliente)
+        {
+            string textcomando = "delete from cliente " + "where id_cliente = " + mCliente.id_cliente;
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarHab(Habitacion mHabitacion)
+        {
+            string textcomando = "delete from habitacion " + "where id_hab = " + mHabitacion.id_hab;
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarResrva(Reserva mReserva)
+        {
+            string textcomando = "delete from reserva " + "where id_reserva = " + mReserva.id_reserva;
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarUser(Usuario mUser)
         {
             string textcomando = "update user " +
                 "set Nombre = \"" + mUser.Nombre + "\"," +
@@ -267,6 +337,28 @@ namespace HotelSol2
                 return true;
             }
             catch (Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarCliente(Cliente mCliente)
+        {
+            string textcomando = "update cliente " +
+                "set Nombre = \"" + mCliente.Nombre + "\"," +
+                "Ap_paterno = \"" + mCliente.Ap_Paterno + "\"," +
+                "Ap_materno = \"" + mCliente.Ap_Materno + "\"," +
+                "Edad = \'" + mCliente.Edad + "\'," +
+                "RFC = \'" + mCliente.RFC + "\'," + 
+                "where id_cliente = " + mCliente.id_cliente + ";";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
             {
                 return false;
             }
@@ -315,28 +407,6 @@ namespace HotelSol2
             }
         }
 
-        public bool GuardarReserva(Reserva mReserva)
-        {
-            string textcomando = "insert into reserva (id_user, id_hab, id_cliente, Tipo_pago, Fecha_ent, Fecha_sal, Total_pago) values " +
-                "(@id_user, @id_hab, @id_cliente, @Tipo_pago, @Fecha_ent, @Fecha_sal, @Total_pago)";
-
-            try
-            {
-                Consulta = new MySqlCommand(textcomando, Conexion);
-                Consulta.Parameters.AddWithValue("@id_user", mReserva.id_user);
-                Consulta.Parameters.AddWithValue("@id_hab", mReserva.id_hab);
-                Consulta.Parameters.AddWithValue("@id_cliente", mReserva.id_cliente);
-                Consulta.Parameters.AddWithValue("@Tipo_pago", mReserva.Tipo_pago);
-                Consulta.Parameters.AddWithValue("@Fecha_ent", mReserva.Fecha_ent.Date);
-                Consulta.Parameters.AddWithValue("@Fecha_sal", mReserva.Fecha_sal.Date);
-                Consulta.Parameters.AddWithValue("@Total_pago", mReserva.Total_pago);
-                Consulta.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-        }
+        
     }
 }
