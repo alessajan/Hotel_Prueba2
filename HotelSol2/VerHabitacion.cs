@@ -15,7 +15,7 @@ namespace HotelSol2
     {
         private BDcs mBD;
         ArrayList ListaHabi;
-        IngresarHabitacion mIngresarHabitacion;
+        IngresarHabitacion mIngresarHabitacion = new IngresarHabitacion();
 
         public VerHabitacion()
         {
