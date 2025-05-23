@@ -88,7 +88,7 @@ namespace HotelSol2
         {
             Cliente mCliente;
             int filaselecc;
-            IngresarCliente mIngresarCliente = new IngresarCliente;
+            IngresarCliente mIngresarCliente = new IngresarCliente();
 
             if(DGVClientes.RowCount > 0)
             {
