@@ -40,7 +40,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.BttnGuardarClien = new System.Windows.Forms.Button();
-            this.BttnCancelar2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label11
@@ -135,7 +134,7 @@
             // 
             // BttnGuardarClien
             // 
-            this.BttnGuardarClien.Location = new System.Drawing.Point(387, 110);
+            this.BttnGuardarClien.Location = new System.Drawing.Point(385, 142);
             this.BttnGuardarClien.Name = "BttnGuardarClien";
             this.BttnGuardarClien.Size = new System.Drawing.Size(102, 35);
             this.BttnGuardarClien.TabIndex = 40;
@@ -143,21 +142,11 @@
             this.BttnGuardarClien.UseVisualStyleBackColor = true;
             this.BttnGuardarClien.Click += new System.EventHandler(this.BttnGuardarClien_Click);
             // 
-            // BttnCancelar2
-            // 
-            this.BttnCancelar2.Location = new System.Drawing.Point(387, 178);
-            this.BttnCancelar2.Name = "BttnCancelar2";
-            this.BttnCancelar2.Size = new System.Drawing.Size(102, 35);
-            this.BttnCancelar2.TabIndex = 41;
-            this.BttnCancelar2.Text = "Cancelar";
-            this.BttnCancelar2.UseVisualStyleBackColor = true;
-            // 
             // IngresarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 324);
-            this.Controls.Add(this.BttnCancelar2);
+            this.ClientSize = new System.Drawing.Size(565, 324);
             this.Controls.Add(this.BttnGuardarClien);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.TxtRFC);
@@ -190,6 +179,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BttnGuardarClien;
-        private System.Windows.Forms.Button BttnCancelar2;
     }
 }

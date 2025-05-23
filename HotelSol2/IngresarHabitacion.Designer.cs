@@ -38,7 +38,6 @@
             this.CBTipoHabit = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.BttnGuardarHabi = new System.Windows.Forms.Button();
-            this.BttnCancelar1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label12
@@ -126,7 +125,7 @@
             // 
             // BttnGuardarHabi
             // 
-            this.BttnGuardarHabi.Location = new System.Drawing.Point(388, 73);
+            this.BttnGuardarHabi.Location = new System.Drawing.Point(386, 97);
             this.BttnGuardarHabi.Name = "BttnGuardarHabi";
             this.BttnGuardarHabi.Size = new System.Drawing.Size(102, 33);
             this.BttnGuardarHabi.TabIndex = 43;
@@ -134,21 +133,11 @@
             this.BttnGuardarHabi.UseVisualStyleBackColor = true;
             this.BttnGuardarHabi.Click += new System.EventHandler(this.BttnGuardarHabi_Click);
             // 
-            // BttnCancelar1
-            // 
-            this.BttnCancelar1.Location = new System.Drawing.Point(388, 142);
-            this.BttnCancelar1.Name = "BttnCancelar1";
-            this.BttnCancelar1.Size = new System.Drawing.Size(102, 33);
-            this.BttnCancelar1.TabIndex = 44;
-            this.BttnCancelar1.Text = "Cancelar";
-            this.BttnCancelar1.UseVisualStyleBackColor = true;
-            // 
             // IngresarHabitacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(540, 231);
-            this.Controls.Add(this.BttnCancelar1);
             this.Controls.Add(this.BttnGuardarHabi);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.CBEstado);
@@ -178,6 +167,5 @@
         private System.Windows.Forms.ComboBox CBTipoHabit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BttnGuardarHabi;
-        private System.Windows.Forms.Button BttnCancelar1;
     }
 }
