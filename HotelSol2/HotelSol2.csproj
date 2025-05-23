@@ -59,11 +59,12 @@
     <Compile Include="Archivo.cs" />
     <Compile Include="BDcs.cs" />
     <Compile Include="Cliente.cs" />
-    <Compile Include="Factura.cs">
+    <Compile Include="Factura.cs" />
+    <Compile Include="GenerarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Factura.Designer.cs">
-      <DependentUpon>Factura.cs</DependentUpon>
+    <Compile Include="GenerarFactura.Designer.cs">
+      <DependentUpon>GenerarFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -100,6 +101,12 @@
       <DependentUpon>ReservaHabitacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="VerHabitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VerHabitacion.Designer.cs">
+      <DependentUpon>VerHabitacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="VerUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,8 +116,8 @@
     <EmbeddedResource Include="AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Factura.resx">
-      <DependentUpon>Factura.cs</DependentUpon>
+    <EmbeddedResource Include="GenerarFactura.resx">
+      <DependentUpon>GenerarFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
@@ -135,6 +142,9 @@
     </Compile>
     <EmbeddedResource Include="ReservaHabitacion.resx">
       <DependentUpon>ReservaHabitacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VerHabitacion.resx">
+      <DependentUpon>VerHabitacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerUsuarios.resx">
       <DependentUpon>VerUsuarios.cs</DependentUpon>

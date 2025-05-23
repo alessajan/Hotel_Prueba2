@@ -1,6 +1,6 @@
 ﻿namespace HotelSol2
 {
-    partial class VerUsuarios
+    partial class VerHabitacion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,28 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerUsuarios));
-            this.TSAcciones = new System.Windows.Forms.ToolStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerHabitacion));
+            this.DGVHabi = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.TSBttnAgregar = new System.Windows.Forms.ToolStripButton();
             this.TSBttnEliminar = new System.Windows.Forms.ToolStripButton();
             this.TSBttnModificar = new System.Windows.Forms.ToolStripButton();
-            this.DGVUsers = new System.Windows.Forms.DataGridView();
-            this.TSAcciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVUsers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVHabi)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // TSAcciones
+            // DGVHabi
             // 
-            this.TSAcciones.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.TSAcciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DGVHabi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVHabi.Location = new System.Drawing.Point(12, 41);
+            this.DGVHabi.Name = "DGVHabi";
+            this.DGVHabi.RowHeadersWidth = 51;
+            this.DGVHabi.RowTemplate.Height = 24;
+            this.DGVHabi.Size = new System.Drawing.Size(751, 397);
+            this.DGVHabi.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TSBttnAgregar,
             this.TSBttnEliminar,
             this.TSBttnModificar});
-            this.TSAcciones.Location = new System.Drawing.Point(0, 0);
-            this.TSAcciones.Name = "TSAcciones";
-            this.TSAcciones.Size = new System.Drawing.Size(785, 27);
-            this.TSAcciones.TabIndex = 0;
-            this.TSAcciones.Text = "toolStrip1";
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(775, 27);
+            this.toolStrip1.TabIndex = 1;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // TSBttnAgregar
             // 
@@ -81,28 +91,18 @@
             this.TSBttnModificar.Text = "Modificar";
             this.TSBttnModificar.Click += new System.EventHandler(this.TSBttnModificar_Click);
             // 
-            // DGVUsers
-            // 
-            this.DGVUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVUsers.Location = new System.Drawing.Point(12, 34);
-            this.DGVUsers.Name = "DGVUsers";
-            this.DGVUsers.RowHeadersWidth = 51;
-            this.DGVUsers.RowTemplate.Height = 24;
-            this.DGVUsers.Size = new System.Drawing.Size(761, 393);
-            this.DGVUsers.TabIndex = 4;
-            // 
-            // VerUsuarios
+            // VerHabitacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(785, 450);
-            this.Controls.Add(this.DGVUsers);
-            this.Controls.Add(this.TSAcciones);
-            this.Name = "VerUsuarios";
-            this.Text = "VerUsuarios";
-            this.TSAcciones.ResumeLayout(false);
-            this.TSAcciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVUsers)).EndInit();
+            this.ClientSize = new System.Drawing.Size(775, 450);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.DGVHabi);
+            this.Name = "VerHabitacion";
+            this.Text = "VerHabitacion";
+            ((System.ComponentModel.ISupportInitialize)(this.DGVHabi)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,10 +110,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip TSAcciones;
+        private System.Windows.Forms.DataGridView DGVHabi;
+        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton TSBttnAgregar;
         private System.Windows.Forms.ToolStripButton TSBttnEliminar;
         private System.Windows.Forms.ToolStripButton TSBttnModificar;
-        private System.Windows.Forms.DataGridView DGVUsers;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace HotelSol2
 {
-    partial class Factura
+    partial class GenerarFactura
     {
         /// <summary>
         /// Required designer variable.

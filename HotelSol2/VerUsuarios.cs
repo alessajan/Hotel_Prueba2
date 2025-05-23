@@ -70,7 +70,7 @@ namespace HotelSol2
                     {
                         if (mBD.Conectar())
                         {
-                            if (mBD.Eliminar(mUsuario))
+                            if (mBD.EliminarUser(mUsuario))
                             {
                                 MessageBox.Show("Usuario eliminado");
                             }

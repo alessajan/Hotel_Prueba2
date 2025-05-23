@@ -57,7 +57,7 @@ namespace HotelSol2
                 }
                 else
                 {
-                    if (mBD.Modificar(mUsuario))
+                    if (mBD.ModificarUser(mUsuario))
                     {
                         MessageBox.Show("Usuario modificado");
                         mBD.Desconectar();

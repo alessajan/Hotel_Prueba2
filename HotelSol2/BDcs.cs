@@ -327,7 +327,7 @@ namespace HotelSol2
                 "Tipo = \"" + mUser.Tipo + "\"," +
                 "Contraseña = \"" + mUser.Contraseña + "\"," +
                 "Ap_paterno = \"" + mUser.Ap_paterno + "\"," +
-                "Ap_materno = \"" + mUser.Ap_materno + "\"," +
+                "Ap_materno = \"" + mUser.Ap_materno + "\"" +
                 "where id_user = " + mUser.id_User + ";";
 
             try
@@ -349,9 +349,44 @@ namespace HotelSol2
                 "Ap_paterno = \"" + mCliente.Ap_Paterno + "\"," +
                 "Ap_materno = \"" + mCliente.Ap_Materno + "\"," +
                 "Edad = \'" + mCliente.Edad + "\'," +
-                "RFC = \'" + mCliente.RFC + "\'," + 
+                "RFC = \'" + mCliente.RFC + "\'" + 
                 "where id_cliente = " + mCliente.id_cliente + ";";
 
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool ModificarHabita(Habitacion mHabitacion)
+        {
+            string textcomando = "update habitacion " +
+                "set Tipo = \"" + mHabitacion.Tipo + "\"," +
+                "Numero = \'" + mHabitacion.Numero + "\'" +
+                "Precio = \'" + mHabitacion.Estado + "\"" +
+                "where id_hab = " + mHabitacion.id_hab + ";";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
+
+        public bool EliminarFactura(Factura mFactura)
+        {
+            string textcomando = "delete from factura " + "where id_fact = " + mFactura.id_fact;
             try
             {
                 Consulta = new MySqlCommand(textcomando, Conexion);

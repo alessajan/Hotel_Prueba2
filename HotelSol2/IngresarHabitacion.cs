@@ -13,9 +13,21 @@ namespace HotelSol2
 {
     public partial class IngresarHabitacion : Form
     {
+        private int Modo;
         public IngresarHabitacion()
         {
             InitializeComponent();
+            Modo = 0;
+        }
+
+        public void setHabitacion(Habitacion mHabitacion)
+        {
+            Modo = 1;
+            CBTipoHabit.Text = mHabitacion.Tipo;
+            TxtNumHab.Text = mHabitacion.Numero.ToString();
+            TxtPrecio.Text = mHabitacion.Precio.ToString();
+            CBEstado.Text = mHabitacion.Estado;
+
         }
 
         private void BttnGuardarHabi_Click(object sender, EventArgs e)
@@ -30,15 +42,30 @@ namespace HotelSol2
 
             if (mBD.Conectar())
             {
-                if (mBD.GuardarHabitacion(mHabitacion))
+                if (Modo == 0)
                 {
-                    MessageBox.Show("Habitacion Guardada");
+                    if (mBD.GuardarHabitacion(mHabitacion))
+                    {
+                        MessageBox.Show("Habitacion Guardada");
+                        mBD.Desconectar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al guardar habitacion");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar habitacion");
+                    if (mBD.ModificarHabita(mHabitacion))
+                    {
+                        MessageBox.Show("Habitacion modificada");
+                        mBD.Desconectar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modificar la habitacion");
+                    }
                 }
-                mBD.Desconectar();
             }
             else
             {

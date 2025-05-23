@@ -70,6 +70,7 @@
             this.btnhabitacion2.TabIndex = 2;
             this.btnhabitacion2.Text = "OK";
             this.btnhabitacion2.UseVisualStyleBackColor = true;
+            this.btnhabitacion2.Click += new System.EventHandler(this.btnhabitacion2_Click);
             // 
             // btnUsuarios2
             // 

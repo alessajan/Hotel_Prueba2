@@ -16,7 +16,7 @@ namespace HotelSol2
         IngresarCliente mIngresarCliente = new IngresarCliente();
         IngresarHabitacion mIngresarHabitacion = new IngresarHabitacion();
         VerUsuarios mVerUsuarios = new VerUsuarios();
-        Factura mFactura = new Factura();
+        GenerarFactura mGenerarFactura = new GenerarFactura();
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -57,7 +57,12 @@ namespace HotelSol2
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-            mFactura.ShowDialog();
+            mGenerarFactura.ShowDialog();
+        }
+
+        private void btnhabitacion2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
