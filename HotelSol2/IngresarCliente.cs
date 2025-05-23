@@ -14,7 +14,6 @@ namespace HotelSol2
     public partial class IngresarCliente : Form
     {
         private int Modo;
-        BDcs mBD = new BDcs();
 
         public IngresarCliente()
         {

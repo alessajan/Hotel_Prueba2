@@ -47,7 +47,7 @@ namespace HotelSol2
 
         private void TSBttnAgregar_Click(object sender, EventArgs e)
         {
-            mIngresarHabitacion.Show();
+            mIngresarHabitacion.ShowDialog();
             LeerHab();
         }
 
