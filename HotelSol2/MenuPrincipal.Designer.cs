@@ -188,6 +188,7 @@
             this.BttnVerClientes.TabIndex = 15;
             this.BttnVerClientes.Text = "Ver";
             this.BttnVerClientes.UseVisualStyleBackColor = true;
+            this.BttnVerClientes.Click += new System.EventHandler(this.BttnVerClientes_Click);
             // 
             // MenuPrincipal
             // 

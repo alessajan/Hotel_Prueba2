@@ -18,6 +18,7 @@ namespace HotelSol2
         VerUsuarios mVerUsuarios = new VerUsuarios();
         GenerarFactura mGenerarFactura = new GenerarFactura();
         VerHabitacion mVerHabitacion = new VerHabitacion();
+        VerClientes mVerClientes = new VerClientes();
 
         public MenuPrincipal()
         {
@@ -65,6 +66,11 @@ namespace HotelSol2
         private void btnhabitacion2_Click(object sender, EventArgs e)
         {
             mVerHabitacion.ShowDialog();
+        }
+
+        private void BttnVerClientes_Click(object sender, EventArgs e)
+        {
+            mVerClientes.ShowDialog();
         }
     }
 }
