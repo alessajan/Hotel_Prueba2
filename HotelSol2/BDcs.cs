@@ -368,7 +368,7 @@ namespace HotelSol2
         {
             string textcomando = "update habitacion " +
                 "set Tipo = \"" + mHabitacion.Tipo + "\"," +
-                "Numero = \'" + mHabitacion.Numero + "\'" +
+                "Numero = \'" + mHabitacion.Numero + "\'," +
                 "Precio = \'" + mHabitacion.Estado + "\"" +
                 "where id_hab = " + mHabitacion.id_hab + ";";
 

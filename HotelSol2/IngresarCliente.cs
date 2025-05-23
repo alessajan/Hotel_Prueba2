@@ -13,9 +13,23 @@ namespace HotelSol2
 {
     public partial class IngresarCliente : Form
     {
+        private int Modo;
+        BDcs mBD = new BDcs();
+
         public IngresarCliente()
         {
             InitializeComponent();
+            Modo = 0;
+        }
+
+        public void setClientes(Cliente mCliente)
+        {
+            Modo = 1;
+            TxtNomCliente.Text = mCliente.Nombre;
+            TxtApCliente.Text = mCliente.Ap_Paterno;
+            TxtAmCliente.Text = mCliente.Ap_Materno;
+            TxtEdad.Text = mCliente.Edad.ToString();
+            TxtRFC.Text = mCliente.RFC;
         }
 
         private void BttnGuardarClien_Click(object sender, EventArgs e)
@@ -32,15 +46,30 @@ namespace HotelSol2
 
             if (mBD.Conectar())
             {
-                if (mBD.GuardarCliente(mCliente))
+                if (Modo == 0)
                 {
-                    MessageBox.Show("Habitacion Guardada");
+                    if (mBD.GuardarCliente(mCliente))
+                    {
+                        MessageBox.Show("Habitacion Guardada");
+                        mBD.Desconectar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al guardar habitacion");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al guardar habitacion");
+                    if (mBD.ModificarCliente(mCliente))
+                    {
+                        MessageBox.Show("Cliente modificado");
+                        mBD.Desconectar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al modifcar al cliente");
+                    }
                 }
-                mBD.Desconectar();
             }
             else
             {

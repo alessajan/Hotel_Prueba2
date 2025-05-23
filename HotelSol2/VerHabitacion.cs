@@ -16,6 +16,7 @@ namespace HotelSol2
         private BDcs mBD;
         ArrayList ListaHabi;
         IngresarHabitacion mIngresarHabitacion;
+
         public VerHabitacion()
         {
             InitializeComponent();
@@ -62,7 +63,7 @@ namespace HotelSol2
                 if (filaselecc >= 0)
                 {
                     mHabitacion = (Habitacion)ListaHabi[filaselecc];
-                    respuesta = MessageBox.Show(this, "¿Seguro que deseas eliminar la habitacion?", MessageBoxButtons.YesNo);
+                    respuesta = MessageBox.Show(this, "¿Seguro que deseas eliminar la habitacion?", "Pregunta", MessageBoxButtons.YesNo);
 
                     if(respuesta == DialogResult.Yes)
                     {

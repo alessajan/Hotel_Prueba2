@@ -41,12 +41,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.BttnVRegistrarH = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.BttnVerClientes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(404, 94);
+            this.label1.Location = new System.Drawing.Point(375, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 16);
             this.label1.TabIndex = 0;
@@ -54,7 +56,7 @@
             // 
             // BttnVer1
             // 
-            this.BttnVer1.Location = new System.Drawing.Point(560, 82);
+            this.BttnVer1.Location = new System.Drawing.Point(547, 101);
             this.BttnVer1.Name = "BttnVer1";
             this.BttnVer1.Size = new System.Drawing.Size(75, 28);
             this.BttnVer1.TabIndex = 1;
@@ -64,7 +66,7 @@
             // 
             // btnhabitacion2
             // 
-            this.btnhabitacion2.Location = new System.Drawing.Point(194, 142);
+            this.btnhabitacion2.Location = new System.Drawing.Point(175, 135);
             this.btnhabitacion2.Name = "btnhabitacion2";
             this.btnhabitacion2.Size = new System.Drawing.Size(75, 23);
             this.btnhabitacion2.TabIndex = 2;
@@ -74,7 +76,7 @@
             // 
             // btnUsuarios2
             // 
-            this.btnUsuarios2.Location = new System.Drawing.Point(156, 87);
+            this.btnUsuarios2.Location = new System.Drawing.Point(144, 80);
             this.btnUsuarios2.Name = "btnUsuarios2";
             this.btnUsuarios2.Size = new System.Drawing.Size(75, 23);
             this.btnUsuarios2.TabIndex = 3;
@@ -85,17 +87,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(61, 149);
+            this.label2.Location = new System.Drawing.Point(52, 142);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 16);
+            this.label2.Size = new System.Drawing.Size(87, 16);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Ver Habitacion";
+            this.label2.Text = "Habitaciones";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(61, 94);
+            this.label4.Location = new System.Drawing.Point(52, 87);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
             this.label4.TabIndex = 6;
@@ -105,15 +107,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 210);
+            this.label5.Location = new System.Drawing.Point(52, 260);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 16);
+            this.label5.Size = new System.Drawing.Size(59, 16);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Factura";
+            this.label5.Text = "Facturas";
             // 
             // btnFactura
             // 
-            this.btnFactura.Location = new System.Drawing.Point(144, 203);
+            this.btnFactura.Location = new System.Drawing.Point(144, 253);
             this.btnFactura.Name = "btnFactura";
             this.btnFactura.Size = new System.Drawing.Size(75, 23);
             this.btnFactura.TabIndex = 8;
@@ -124,7 +126,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(404, 149);
+            this.label3.Location = new System.Drawing.Point(375, 168);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 16);
             this.label3.TabIndex = 9;
@@ -132,7 +134,7 @@
             // 
             // BttnVRegistrarC
             // 
-            this.BttnVRegistrarC.Location = new System.Drawing.Point(543, 142);
+            this.BttnVRegistrarC.Location = new System.Drawing.Point(517, 161);
             this.BttnVRegistrarC.Name = "BttnVRegistrarC";
             this.BttnVRegistrarC.Size = new System.Drawing.Size(75, 23);
             this.BttnVRegistrarC.TabIndex = 10;
@@ -143,7 +145,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(404, 214);
+            this.label6.Location = new System.Drawing.Point(375, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 16);
             this.label6.TabIndex = 11;
@@ -151,7 +153,7 @@
             // 
             // BttnVRegistrarH
             // 
-            this.BttnVRegistrarH.Location = new System.Drawing.Point(560, 207);
+            this.BttnVRegistrarH.Location = new System.Drawing.Point(547, 218);
             this.BttnVRegistrarH.Name = "BttnVRegistrarH";
             this.BttnVRegistrarH.Size = new System.Drawing.Size(75, 23);
             this.BttnVRegistrarH.TabIndex = 12;
@@ -169,11 +171,31 @@
             this.label7.TabIndex = 13;
             this.label7.Text = "Hotel El Sol";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(52, 199);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 16);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Clientes";
+            // 
+            // BttnVerClientes
+            // 
+            this.BttnVerClientes.Location = new System.Drawing.Point(144, 192);
+            this.BttnVerClientes.Name = "BttnVerClientes";
+            this.BttnVerClientes.Size = new System.Drawing.Size(75, 23);
+            this.BttnVerClientes.TabIndex = 15;
+            this.BttnVerClientes.Text = "Ver";
+            this.BttnVerClientes.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 299);
+            this.ClientSize = new System.Drawing.Size(720, 324);
+            this.Controls.Add(this.BttnVerClientes);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BttnVRegistrarH);
             this.Controls.Add(this.label6);
@@ -209,5 +231,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BttnVRegistrarH;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button BttnVerClientes;
     }
 }
