@@ -46,20 +46,35 @@ namespace HotelSol2
 
         private void bttnGenerarFac_Click(object sender, EventArgs e)
         {
-            GuardarArchivo("Reserva.csv");
-        }
-
-        private void GuardarArchivo(string Reserva)
-        {
-            StreamWriter Escritor = new StreamWriter(Reserva);
-            BDcs mBD = new BDcs();
-            mBD.Conectar();
-            ListaReserva = mBD.ConsultarReserva();
-            foreach ( Reserva mReserva in ListaReserva)
+            if(DGVFactura.SelectedRows.Count == 0)
             {
-                Escritor.WriteLine(mReserva.id_reserva + "," + mReserva.id_user + "," + mReserva.id_hab + "," + mReserva.id_cliente + "," + mReserva.Tipo_pago + "," + mReserva.Fecha_ent + "," + mReserva.Fecha_sal + "," + mReserva.Total_pago);
+                MessageBox.Show("Seleccione una reservacion para facturar");
+                return;
             }
-            Escritor.Close();
+
+            DataGridViewRow fila = DGVFactura.SelectedRows[0];
+
+            Reserva mReserva = new Reserva()
+            {
+                id_reserva = Convert.ToInt32(fila.Cells["id_reserva"].Value.ToString()),
+                id_user = Convert.ToInt32(fila.Cells["id_user"].Value.ToString()),
+                id_hab = Convert.ToInt32(fila.Cells["id_hab"].Value.ToString()),
+                id_cliente = Convert.ToInt32(fila.Cells["id_user"].Value.ToString()),
+                Tipo_pago = fila.Cells["Tipo_pago"].Value.ToString(),
+                Fecha_ent = Convert.ToDateTime(fila.Cells["Fecha_ent"].Value),
+                Fecha_sal = Convert.ToDateTime(fila.Cells["Fecha_sal"].Value),
+                Total_pago = float.Parse(fila.Cells["Total_pago"].Value.ToString())
+            };
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "PDF files (*.pdf)|*.pdf";
+            saveFileDialog.FileName = $"Factura_Reserva_{mReserva.id_reserva}.pdf";
+
+            if(saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                FacturaGenerator.GenerarFactura(mReserva, saveFileDialog.FileName);
+                MessageBox.Show("Factura generada correctamente");
+            }
         }
     }
 }
