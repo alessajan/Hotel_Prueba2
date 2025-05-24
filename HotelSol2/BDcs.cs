@@ -442,6 +442,30 @@ namespace HotelSol2
             }
         }
 
-        
+        public float ObtenerPrecio(int id_hab)
+        {
+            string textcomando = "select precio from habitacion where id_hab = @id_hab";
+
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.Parameters.AddWithValue("@id_hab", id_hab);
+
+                object result = Consulta.ExecuteScalar();
+
+                if (result != null && float.TryParse(result.ToString(), out float precio))
+                {
+                    return precio;
+                }
+                else
+                {
+                    return 0f;
+                }
+            }
+            catch(Exception e)
+            {
+                return 0f;
+            }
+        }
     }
 }

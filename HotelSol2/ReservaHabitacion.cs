@@ -18,12 +18,17 @@ namespace HotelSol2
         ArrayList listahabi;
         ArrayList listacliente;
         ArrayList ListaUsers;
+
         public ReservaHabitacion()
         {
             InitializeComponent();
             LeerHabi();
             LeerCliente();
             LeerUsers();
+
+            DTPIngreso.ValueChanged += (s, e) => ActualizarTotal();
+            DTPSalida.ValueChanged += (s, e) => ActualizarTotal();
+            DGVHabi.SelectionChanged += (s, e) => ActualizarTotal();
         }
 
         private void LeerHabi()
@@ -68,6 +73,36 @@ namespace HotelSol2
             }
         }
 
+        private void ActualizarTotal()
+        {
+            if (DGVHabi.CurrentRow == null) return;
+
+            int id_hab = Convert.ToInt32(DGVHabi.CurrentRow.Cells["id_hab"].Value);
+            DateTime fecha_ent = DTPIngreso.Value.Date;
+            DateTime fecha_sal = DTPSalida.Value.Date;
+
+            if (fecha_sal <= fecha_ent)
+            {
+                TxtTotalPagar.Text = "0.00";
+                return;
+            }
+
+            mBD = new BDcs();
+            if (mBD.Conectar())
+            {
+                float precioNoche = mBD.ObtenerPrecio(id_hab);
+                mBD.Desconectar();
+
+                int noches = (fecha_sal - fecha_ent).Days;
+                float total = precioNoche * noches;
+                TxtTotalPagar.Text = total.ToString("0.00");
+            }
+            else
+            {
+                TxtTotalPagar.Text = "Error";
+            }
+        }
+
         private void BttnRegistrar_Click(object sender, EventArgs e)
         {
             mBD = new BDcs();
@@ -79,9 +114,15 @@ namespace HotelSol2
             }
 
             int id_hab = Convert.ToInt32(DGVHabi.CurrentRow.Cells["id_hab"].Value);
-            //int id_hab = ((Habitacion)listahabi[DGVHabi.CurrentRow.Index]).id_hab;
             int id_cliente = Convert.ToInt32(DVGCliente.CurrentRow.Cells["id_cliente"].Value);
             int id_user = Convert.ToInt32(DGVUsers.CurrentRow.Cells["id_user"].Value);
+
+            DateTime fecha_ent = DTPIngreso.Value.Date;
+            DateTime fecha_sal = DTPSalida.Value.Date;
+
+            float precioNoche = mBD.ObtenerPrecio(id_hab);
+            int noches = (fecha_sal - fecha_ent).Days;
+            float total_pago = precioNoche * noches;
 
             Reserva mReserva = new Reserva()
             {
@@ -89,9 +130,9 @@ namespace HotelSol2
                 id_hab = id_hab,
                 id_cliente = id_cliente,
                 Tipo_pago = CMBTipoPago.SelectedItem.ToString(),
-                Fecha_ent = DTPIngreso.Value,
-                Fecha_sal = DTPSalida.Value,
-                Total_pago = float.Parse(TxtTotalPagar.Text)
+                Fecha_ent = fecha_ent,
+                Fecha_sal = fecha_sal,
+                Total_pago = total_pago
             };
             if (mBD.Conectar())
             {
