@@ -248,7 +248,8 @@ namespace HotelSol2
                         id_cliente = Lector.GetInt32("id_cliente"),
                         Tipo_pago = Lector.GetString("Tipo_pago"),
                         Fecha_ent = Lector.GetDateTime("Fecha_ent"),
-                        Fecha_sal = Lector.GetDateTime("Fecha_sal")
+                        Fecha_sal = Lector.GetDateTime("Fecha_sal"),
+                        Total_pago = Lector.GetFloat("Total_pago")
                     };
                     ListaReserva.Add(mReserva);
                 }
