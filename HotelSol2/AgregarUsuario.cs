@@ -14,6 +14,8 @@ namespace HotelSol2
     public partial class AgregarUsuario : Form
     {
         private int Modo;
+        private int id_user;
+
         public AgregarUsuario()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace HotelSol2
         public void setUsuarios(Usuario mUsuario)
         {
             Modo = 1;
+            id_user = mUsuario.id_User;
             TxtNombre.Text = mUsuario.Nombre;
             TxtTipo.Text = mUsuario.Tipo;
             TxtContraseña.Text = mUsuario.Contraseña;
@@ -33,6 +36,7 @@ namespace HotelSol2
         {
             Usuario mUsuario = new Usuario();
 
+            mUsuario.id_User = id_user;
             mUsuario.Nombre =  (TxtNombre.Text);
             mUsuario.Ap_paterno = (TxtAp_paterno.Text);
             mUsuario.Ap_materno = (TxtAp_materno.Text);
