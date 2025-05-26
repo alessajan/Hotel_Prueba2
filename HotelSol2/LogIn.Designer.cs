@@ -65,6 +65,7 @@
             // 
             this.TxtContraseña.Location = new System.Drawing.Point(206, 120);
             this.TxtContraseña.Name = "TxtContraseña";
+            this.TxtContraseña.PasswordChar = '*';
             this.TxtContraseña.Size = new System.Drawing.Size(194, 22);
             this.TxtContraseña.TabIndex = 3;
             // 
@@ -89,7 +90,7 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Hotel El Sol";
             // 
-            // Form1
+            // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -100,7 +101,7 @@
             this.Controls.Add(this.TxtUser);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "LogIn";
             this.Text = "LOGIN";
             this.ResumeLayout(false);
             this.PerformLayout();
