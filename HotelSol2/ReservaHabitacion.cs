@@ -18,6 +18,7 @@ namespace HotelSol2
         ArrayList listahabi;
         ArrayList listacliente;
         ArrayList ListaUsers;
+        float precioNoche;
 
         public ReservaHabitacion()
         {
@@ -25,6 +26,8 @@ namespace HotelSol2
             LeerHabi();
             LeerCliente();
             LeerUsers();
+
+            precioNoche = 0;
 
             DTPIngreso.ValueChanged += (s, e) => ActualizarTotal();
             DTPSalida.ValueChanged += (s, e) => ActualizarTotal();
@@ -90,7 +93,7 @@ namespace HotelSol2
             mBD = new BDcs();
             if (mBD.Conectar())
             {
-                float precioNoche = mBD.ObtenerPrecio(id_hab);
+                precioNoche = mBD.ObtenerPrecio(id_hab);
                 mBD.Desconectar();
 
                 int noches = (fecha_sal - fecha_ent).Days;
@@ -120,7 +123,12 @@ namespace HotelSol2
             DateTime fecha_ent = DTPIngreso.Value.Date;
             DateTime fecha_sal = DTPSalida.Value.Date;
 
-            float precioNoche = mBD.ObtenerPrecio(id_hab);
+            if (mBD.Conectar())
+            {
+                precioNoche = mBD.ObtenerPrecio(id_hab);
+                mBD.Desconectar();
+            }
+
             int noches = (fecha_sal - fecha_ent).Days;
             float total_pago = precioNoche * noches;
 

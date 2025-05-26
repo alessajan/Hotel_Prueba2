@@ -16,6 +16,7 @@ namespace HotelSol2
     {
         private ArrayList ListaReserva = new ArrayList();
         BDcs mBD = new BDcs();
+        ReservaHabitacion mReservarHabitacion = new ReservaHabitacion();
 
         private void LeerReserva()
         {
@@ -74,6 +75,46 @@ namespace HotelSol2
             {
                 FacturaGenerator.GenerarFactura(mReserva, saveFileDialog.FileName);
                 MessageBox.Show("Factura generada correctamente");
+            }
+        }
+
+        private void TSBttnAgregar_Click(object sender, EventArgs e)
+        {
+            mReservarHabitacion.ShowDialog();
+            LeerReserva();
+        }
+
+        private void TSBttnEliminar_Click(object sender, EventArgs e)
+        {
+            Reserva mReserva;
+            DialogResult respuesta;
+            int filaselecc;
+
+            if(DGVFactura.RowCount > 0)
+            {
+                filaselecc = DGVFactura.CurrentRow.Index;
+                if(filaselecc >= 0)
+                {
+                    mReserva = (Reserva)ListaReserva[filaselecc];
+                    respuesta = MessageBox.Show(this, "¿Seguro que desea eliminar la reserva?", "Pregunta", MessageBoxButtons.YesNo);
+
+                    if(respuesta == DialogResult.Yes)
+                    {
+                        if (mBD.Conectar())
+                        {
+                            if (mBD.EliminarResrva(mReserva))
+                            {
+                                MessageBox.Show("La reserva fue eliminada");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error al eliminar la reserva");
+                            }
+                            mBD.Desconectar();
+                            LeerReserva();
+                        }
+                    }
+                }
             }
         }
     }

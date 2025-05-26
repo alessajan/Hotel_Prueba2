@@ -385,6 +385,24 @@ namespace HotelSol2
             }
         }
 
+        public bool ModificarReserva(Reserva mReserva)
+        {
+            string textcomando = "update reserva " +
+                "set Tipo_pago = \"" + mReserva.Tipo_pago + "\"," +
+                "Fecha_ent = \"" + mReserva.Fecha_ent + "\"," +
+                "Fecha_sal = \"" + mReserva.Fecha_sal + "\"" +
+                "where id_reserva = " + mReserva.id_reserva + ";";
+            try
+            {
+                Consulta = new MySqlCommand(textcomando, Conexion);
+                Consulta.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
         public bool EliminarFactura(Factura mFactura)
         {
             string textcomando = "delete from factura " + "where id_fact = " + mFactura.id_fact;

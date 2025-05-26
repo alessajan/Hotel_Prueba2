@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelSol2
 {
-    internal class Reserva
+    public class Reserva
     {
         public Usuario mUsuario { get; set; }
         public int id_reserva { set; get; }
