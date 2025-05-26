@@ -14,6 +14,7 @@ namespace HotelSol2
     public partial class IngresarHabitacion : Form
     {
         private int Modo;
+        private int id_hab;
         public IngresarHabitacion()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace HotelSol2
         public void setHabitacion(Habitacion mHabitacion)
         {
             Modo = 1;
+            id_hab = mHabitacion.id_hab;
             CBTipoHabit.Text = mHabitacion.Tipo;
             TxtNumHab.Text = mHabitacion.Numero.ToString();
             TxtPrecio.Text = mHabitacion.Precio.ToString();
@@ -33,6 +35,8 @@ namespace HotelSol2
         private void BttnGuardarHabi_Click(object sender, EventArgs e)
         {
             Habitacion mHabitacion = new Habitacion();
+
+            mHabitacion.id_hab = id_hab;
             mHabitacion.Tipo = CBTipoHabit.Text;
             mHabitacion.Numero = int.Parse(TxtNumHab.Text);
             mHabitacion.Precio = int.Parse(TxtPrecio.Text);

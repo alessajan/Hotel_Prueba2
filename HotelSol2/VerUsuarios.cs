@@ -73,13 +73,14 @@ namespace HotelSol2
                             if (mBD.EliminarUser(mUsuario))
                             {
                                 MessageBox.Show("Usuario eliminado");
+                                mBD.Desconectar();
+                                LeerUsers();
                             }
                             else
                             {
                                 MessageBox.Show("No se pudo eliminar al usuario");
                             }
-                            mBD.Desconectar();
-                            LeerUsers();
+                            
                         }
                     }
                 }

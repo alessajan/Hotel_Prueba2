@@ -14,7 +14,7 @@ namespace HotelSol2
     public partial class IngresarCliente : Form
     {
         private int Modo;
-
+        private int id_cliente;
         public IngresarCliente()
         {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace HotelSol2
         public void setClientes(Cliente mCliente)
         {
             Modo = 1;
+            id_cliente = mCliente.id_cliente;
             TxtNomCliente.Text = mCliente.Nombre;
             TxtApCliente.Text = mCliente.Ap_Paterno;
             TxtAmCliente.Text = mCliente.Ap_Materno;
@@ -34,7 +35,7 @@ namespace HotelSol2
         private void BttnGuardarClien_Click(object sender, EventArgs e)
         {
             Cliente mCliente = new Cliente();
-
+            mCliente.id_cliente = id_cliente;
             mCliente.Nombre = TxtNomCliente.Text;
             mCliente.Ap_Paterno = TxtApCliente.Text;
             mCliente.Ap_Materno = TxtAmCliente.Text;
